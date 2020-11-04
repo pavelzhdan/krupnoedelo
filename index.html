@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "style.css">
+    <title>TO-DO List</title>
+</head>
+<body>
+    <header class = "citeHeader">
+        <a class = "citeHeader_menuButton" href = "#0"><span class = "visually-hidden">Menu button</span></a>
+        <h1 class = "citeHeader_mainText">To-Do List</h1>
+        <a class = "citeHeader_addButton" href = "#0"><span class = "visually-hidden">Add task button</span></a>
+        <div class = "createTaskContainer">
+            <div class = "createTaskForm">
+                <h3 class = "createTaskForm_header">Создание задачи</h3>
+                <a class = "createTaskForm_closeButton"></a>
+                <form class = "createTaskForm_form">
+                    <label for="Name" class = "createTaskForm_inputHeader">Название</label>
+                    <input type="text" name="name" class = "createTaskForm_input">
+                    
+                    <label for="date" class = "createTaskForm_inputHeader">Дедлайн</label>
+                    <input type="datetime" id="date" name="date" class = "createTaskForm_input">
+
+                    <label for="country" class = "createTaskForm_inputHeader">Приоритет</label>
+                    <select name="country" class = "createTaskForm_input">
+                    <option value="Высокий">Высокий</option> 
+                    <option value="Средний">Средний</option> 
+                    <option value="Низкий">Низкий</option> 
+                    </select> 
+                    <input type="color" id="head" name="head"
+                    value="#e66465">
+                    <label for="head">Head</label>
+                    <label for="textarea">Label for textarea</label>
+                    <textarea id="textarea" rows="5">Textarea</textarea>
+                </form>
+            </div>
+        </div>   
+    </header>
+    <main class = "mainContainer">
+        <section class = "menu hide">
+            <ul class = "taskStatusFilter">
+                <li class = "taskStatusFilter_item"><img src = "img/new_task_icon.svg" class = "taskStatusFilter_name"><p class="taskStatusFilter_item_name">Новые</p></li>
+                <li class = "taskStatusFilter_item"><img src = "img/task_completed-image.svg" class = "taskStatusFilter_name"><p class="taskStatusFilter_item_name">Выполненные</p></li>
+                <li class = "taskStatusFilter_item"><img src = "img/all_tasks_icon.svg" class = "taskStatusFilter_name"><p class="taskStatusFilter_item_name">Все</p></li>
+            </ul>
+            <ul class = "taskUrgencyFilter">
+                <li class = "taskUrgencyFilter_header"><p class = "taskUrgencyFilter_header_text">Приоритет</p></li>
+                <li class = "taskUrgencyFilter_item">Высокий</li>
+                <li class = "taskUrgencyFilter_item">Средний</li>
+                <li class = "taskUrgencyFilter_item">Низкий</li>
+            </ul>
+        </section>
+        <div class = "toDoListContainer">
+            <div class = "toDoListHeader" >
+                <h2 class = "toDoListHeader_name" >Название</h2>
+                <h2 class = "toDoListHeader_date">Дедлайн</h2>
+                <h2 class = "toDoListHeader_priority">Приоритет</h2>
+            </div>
+            <ul class = "toDoList">
+                <li class = "toDoList_task">
+                    <div class = "toDoList_task_status">
+                        <img class = "toDoList_task_status_image" src = "img\task_completed-image.svg">
+                        <div class = "toDoList_task_status_color"></div>
+                    </div>
+                    <div class = "toDoList_task_description">
+                        <h3 class = "toDoList_task_description_name">Название задания</h3>
+                        <p class = "toDoList_task_description_text">Описание подробное</p>
+                    </div>
+                    <div class = "toDoList_task_initializationTime">
+                        <p class = "toDoList_task_time_date">29.09.12</p>
+                        <p class = "toDoList_task_time_time">15:32</p>
+                    </div>
+                    <div class = "toDoList_task_priority">
+                        <p class = "toDoList_task_priority_text">Высокий</p>
+                    </div>
+                    <a class = "toDoList_task_editButton" href = "#0"><span class = "visually-hidden">Edit button</span></a>
+                </li>
+                <li class = "toDoList_item"></li>
+                <li class = "toDoList_item"></li>
+            </ul>
+        </div>
+        <div class = "readTaskForm">
+            <div class = "readTaskForm_menu">
+                <a class = "readTaskForm_menu_backbutton">
+                    <img class = "backbutton_image" src = "img/back_menu_button.svg">
+                </a>
+                <h3 class = "readTaskForm_header">Сходить в магазин</h2>
+                <a class = "readTaskForm_menu_button taskComplete"></a>
+                <a class = "readTaskForm_menu_button taskDelete"></a>
+                <a class = "readTaskForm_menu_button taskEdit"></a>
+            </div>
+            <div class = "readTaskForm_statusContainer">
+                <div class = "readTaskForm_statusContainer_block">
+                    <div class = "statusBlock">
+                        <h3 class = "statusContainer_header">Статус задачи</h3>
+                        <p class = "statusContainer_text">Выполнена</p>
+                    </div>
+                    <div class = "priorityBlock">
+                        <h3 class = "statusContainer_header">Приоритет:</h3>
+                        <p class = "statusContainer_text">Высокий</p>                        
+                    </div>
+                </div>
+                <div class = "readTaskForm_statusContainer_block">
+                    <div class = "deadLine">
+                        <h3 class = "statusContainer_header">Дедлайн</h3>
+                        <p class = "statusContainer_text">29.09.2020, 18:32</p>   
+                    </div>
+                    <div class = "tagBlock">
+                        <h3 class = "statusContainer_header">Метка</h3>
+                        <div class = "statusContainer_colorTag"></div>                           
+                    </div>
+                </div>
+                <div class = "readTaskForm_taskTextContainer">
+                    <p class = "readTaskForm_taskText"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+<script src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
+

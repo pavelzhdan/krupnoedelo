@@ -1,0 +1,515 @@
+@font-face{
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "Roboto";
+    src: url("fonts/Roboto-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+.visually-hidden {
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+}
+
+.hide{
+    display: none;
+}
+
+body {
+    margin:0;
+    padding:0;
+}
+
+.citeHeader {
+    background-color: #F2994A;
+    padding: 5px 10px 5px 13px;
+    display: flex;
+    align-items: center;
+}
+
+.citeHeader_menuButton{
+    display: inline-block;
+    width: 24px;
+    height: 18px;
+    background-image: url("/img/ListingmenuButton.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.citeHeader_mainText{
+    margin: 0;
+    display: inline-block;
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 700;
+    font-style: normal;
+    color: #f2f2f2;
+    margin-left: 13px;
+    margin-right: 119px;
+    text-transform: capitalize;
+}
+
+.citeHeader_addButton{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("img/addTaskButton.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.mainContainer{
+    position: relative;
+}
+
+.toDoListContainer{
+    background-color: #f2f2f2;
+    padding: 10px;
+    height: 100vh;
+}
+
+.toDoListHeader{
+    padding: 5px 26px 10px 10px;
+}
+
+.toDoListHeader_name, .toDoListHeader_date, .toDoListHeader_priority{
+    display: inline-block;
+    margin-left: 10px;
+    font-family: "Roboto";
+    font-size: 10px;
+    font-weight: 500;
+    font-style: normal;
+    color: #4f4f4f;
+    text-transform: capitalize;
+    margin:0;
+}
+
+.toDoListHeader_date{
+    margin-left: 100px;
+}
+
+.toDoListHeader_priority{
+    margin-left: 12px;
+}
+
+.toDoList{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.toDoList_task{
+    display: flex;
+    border-top: 1px solid #c4c4c4;
+    padding-top: 7px;
+    justify-content: center;
+}
+
+.toDoList_task_status{
+    display: inline-block;
+    text-align: center;
+    width: 24px;
+}
+
+.toDoList_task_status_color{
+    height: 8px;
+    background-color: black;
+    border-radius: 4px;
+}
+
+.toDoList_task_description{
+    display: inline-block;
+    width: 117px;
+    padding-left: 7px;
+}
+
+.toDoList_task_description_name, .toDoList_task_time_date{
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 500;
+    color: #4f4f4f;
+    text-decoration: underline;
+    margin:0;
+}
+
+.toDoList_task_description_text, .toDoList_task_time_time{
+    font-family: "Roboto";
+    font-size: 10px;
+    font-weight: 400;
+    color: #828282;  
+    margin:0;
+   
+}
+
+.toDoList_task_initializationTime{
+    display: inline-block;
+    width: 50px;
+    padding-top: 2px;
+}
+
+.toDoList_task_time_date{
+    font-family: "Roboto";
+    font-size: 10px;
+    font-weight: 400;
+    color: #4f4f4f;
+    text-decoration: none;
+    margin:0;
+}
+
+.toDoList_task_priority{
+    display: inline-block;
+    width: 72px;
+}
+
+.toDoList_task_priority_text{
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 400;
+    color: #4f4f4f;
+    margin: 0;
+    padding: 1px 0 0 12px;
+}
+
+.toDoList_task_editButton{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 8px;
+    background-image: url("img/edit_task_image.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.menu{
+    box-sizing: border-box;
+    width: 260px;
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: #e5e5e5;
+    padding-top: 21px;
+    padding-left: 10px;
+}
+
+.taskStatusFilter{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0 0 15px 0;
+}
+
+.taskStatusFilter_item{
+    box-sizing: border-box;
+    display: flex;
+    width: 240px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 10px 10px 10px 12px;
+    align-items: center;
+}
+
+.taskStatusFilter_item:hover{
+    background-color: #F2F2F2;
+}
+
+.taskStatusFilter_item__pressed{
+    background-color: #BDBDBD;
+}
+
+.taskStatusFilter_item_name{
+    display: inline-block;
+    font-family: "Roboto";
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    color: #333333;
+    padding-left: 18px;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.taskUrgencyFilter{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.taskUrgencyFilter_header{
+    margin:0;
+    padding-top: 18px;
+    padding-left: 45px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #c4c4c4;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-image: url("img/priority_list-icon.svg");
+    background-repeat: no-repeat;
+    background-position: 14px 19px;
+}
+
+.closedFilter{
+    background-image: url("img/Arrow_Stroke.svg");
+    background-position: 19px 16px;
+
+}
+
+.taskUrgencyFilter_header_text{
+    display: inline-block;
+    color: #333333;
+    font-family: "Roboto";
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+}
+
+.taskUrgencyFilter_item{
+    padding-left: 50px;
+    color: #333333;
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 23px;
+    cursor: pointer;
+}
+
+.readTaskForm{
+    position: absolute;
+    z-index: 1;
+    top:0;
+    left:0;
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 100vh;
+}
+
+.readTaskForm_menu{
+    margin-left: 10px; 
+    margin-right: 10px;
+    border-bottom: 1px solid #c4c4c4;
+    display: flex;
+    align-items: center;
+    padding-left: 9px;
+}
+
+.readTaskForm_menu_backbutton{
+    display: inline-block;
+    width: 12px;
+    height: 21px;
+    margin-right: 14px;
+}
+
+.readTaskForm_header{
+    display: inline-block;
+    box-sizing: border-box;
+    height: 30px;
+    width: 130px;
+    padding-left: 5px;
+    line-height: 30px;
+    border-left: 1px solid #c4c4c4;
+    color: #333333;
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.readTaskForm_menu_button{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #828282;
+    border-radius: 5px;
+    margin-left: 5px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.taskComplete{
+    background-image: url("img/task_completed-image.svg");
+    background-size: 24px 24px;
+}
+
+.taskDelete{
+    background-image: url("img/deleteButtonIicon.svg");
+    background-size: 18px 24px;
+}
+
+.taskEdit{
+    background-image: url("img/edit_task_image.svg");
+    background-size: 19px 20px;
+}
+
+.readTaskForm_statusContainer{
+    background-color: #ffffff;
+}
+
+.readTaskForm_statusContainer_block{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 7px 49px 7px 28px;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.readTaskForm_statusContainer_block:first-of-type{
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.statusContainer_header{
+    color: #828282;
+    font-family: "Roboto";
+    font-size: 10px;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.statusContainer_text{
+    color: #333333;
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+}
+
+.statusBlock{
+    box-sizing: border-box;
+    width: 100px;
+    background-image: url("img/task_completed-image.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 24px 24px;
+    padding-left: 32px;
+}
+
+.priorityBlock{
+    width: 53px;
+}
+
+.deadLine{
+    width: 100px;
+    text-align: center;
+}   
+
+.tagBlock{
+    width: 53px;
+    text-align: center;
+}
+
+.statusContainer_colorTag{
+    width: 30px;
+    height: 10px;
+    /*можно удалить*/
+    background-color: #F2994A;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.readTaskForm_taskTextContainer{
+    padding: 9px 10px 0 10px;
+}
+
+.readTaskForm_taskText{
+    color: #4f4f4f;
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+}
+
+.readTaskForm{
+    display: none;
+}
+
+.createTaskContainer{
+    padding: 28px 10px;
+    background-color: rgba(50, 50, 50, 0.2);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.createTaskForm{
+    background-color: #f2f2f2;
+    padding: 15px 15px 5px 15px;
+    position: relative;
+}
+
+
+.createTaskForm_header{
+    margin:0;
+    color: #333333;
+    font-family: "Roboto";
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+.createTaskForm_closeButton{
+    position: absolute;
+    right: 21px;
+    top:17px;
+    width: 18px;
+    height: 18px;
+    background-image: url("img/createtaskCloseButton.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.createTaskForm_form{
+    padding-top: 21px;
+}
+
+.createTaskForm_inputHeader{
+    color: #4f4f4f;
+    font-family: "Roboto";
+    font-size: 10px;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+}
+
+.createTaskForm_input{
+    display: block;
+    box-sizing: border-box;
+    padding: 12px 10px 14px 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+.createTaskForm_input::placeholder{
+    color: #333333;
+    font-family: "Roboto";
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+}
